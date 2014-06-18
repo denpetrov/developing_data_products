@@ -5,7 +5,7 @@
 # global variables
 
 # read and organize the data
-ds.countries <- read.csv (file = './countries.csv', sep = ',')
+ds.countries <- read.csv (file = './data/countries.csv', sep = ',')
 flds.order <- c ('country', 'year', 'Party', 'Seats', 'perc.of.seats', 
                  'Banzhaf.Power.Index', 'Shapley.Shubik.Power.Index')
 
