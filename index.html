@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Parlaments</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Parlaments">
+  <meta name="author" content="Denis PETROV">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Parlaments</h1>
+    <h2>Parlament parties of different countries representaton</h2>
+    <p>Denis PETROV<br/>Coursera student</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style>
+strong {
+  font-weight: bold;
+}
+</style>
+
+<h2>About the data</h2>
+
+<p>We present the data of the number of seats in parlamesn for different countries 
+of different years of elections.
+The data contains:</p>
+
+<ul>
+<li><strong>Party</strong> is a party of the parlament.</li>
+<li><strong>Seats</strong> is a number of seats in the parlament of selected country for 
+the chosen year.</li>
+<li><strong>perc of seats</strong> is a percentage of seats.</li>
+<li><strong>Banzhaf Power Index</strong> is a power index defined by the probability of 
+changing an outcome of a vote where voting rights are not necessarily equally 
+divided among the voters or shareholders 
+[read more on 
+<a href="http://en.wikipedia.org/wiki/Banzhaf_power_index">Wikipedia</a>].</li>
+<li><strong>Shapley Shubik Power Index</strong> is an index which counts the number 
+of times a party makes the coalition a winning one joining it 
+(order does matter)
+[<a href="http://en.wikipedia.org/wiki/Shapley%E2%80%93Shubik_power_index">Wikipedia</a>].</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Data representation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>By choosing a country and a year from the list you obtain:</p>
+
+<ul>
+<li>Pie chart of the seats of each party</li>
+<li>Table of detailed information including party name, number of seats and 
+indices.</li>
+</ul>
+
+<p>One can try the application 
+<a href="https://petrov.shinyapps.io/my_coef_coursera/">here</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Data example (pie chart)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Pie chart for Austria (2002)</p>
+
+<!-- PieChart generated in R 3.1.0 by googleVis 0.5.1 package -->
+
+<!-- Thu Jun 19 20:22:01 2014 -->
+
+<!-- jsHeader -->
+
+<script type="text/javascript">
+ 
+// jsData 
+function gvisDataPieChartID38f70f46bec () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ "Green Alternatie/Green in Parliament",
+17 
+],
+[
+ "Freedom Party of Austria",
+18 
+],
+[
+ "Austrian Peoples Party",
+79 
+],
+[
+ "Austrian Socialist Party",
+69 
+] 
+];
+data.addColumn('string','Party');
+data.addColumn('number','Seats');
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartPieChartID38f70f46bec() {
+var data = gvisDataPieChartID38f70f46bec();
+var options = {};
+options["allowHtml"] = true;
+options["height"] = "500";
+
+    var chart = new google.visualization.PieChart(
+    document.getElementById('PieChartID38f70f46bec')
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = "corechart";
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage && i < pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartPieChartID38f70f46bec);
+})();
+function displayChartPieChartID38f70f46bec() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load("visualization", "1", { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length > 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+</script>
+ 
+
+<!-- jsChart -->  
+
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartPieChartID38f70f46bec"></script>
+ 
+
+<!-- divChart -->
+
+<div id="PieChartID38f70f46bec"
+  style="width: 600px; height: 500px;">
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Data example (table)</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Corresponding table for Austria (2002)</p>
+
+<!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
+
+<!-- Thu Jun 19 18:31:43 2014 -->
+
+<TABLE border=1>
+<TR> <TH> Party </TH> <TH> Seats </TH> <TH> perc of seats </TH> <TH> Banzhaf Power Index </TH> <TH> Shapley Shubik Power Index </TH>  </TR>
+  <TR> <TD> Green Alternatie/Green in Parliament </TD> <TD align="right">  17 </TD> <TD align="right"> 0.09 </TD> <TD align="right"> 0.17 </TD> <TD align="right"> 0.17 </TD> </TR>
+  <TR> <TD> Freedom Party of Austria </TD> <TD align="right">  18 </TD> <TD align="right"> 0.10 </TD> <TD align="right"> 0.17 </TD> <TD align="right"> 0.17 </TD> </TR>
+  <TR> <TD> Austrian Peoples Party </TD> <TD align="right">  79 </TD> <TD align="right"> 0.43 </TD> <TD align="right"> 0.50 </TD> <TD align="right"> 0.50 </TD> </TR>
+  <TR> <TD> Austrian Socialist Party </TD> <TD align="right">  69 </TD> <TD align="right"> 0.38 </TD> <TD align="right"> 0.17 </TD> <TD align="right"> 0.17 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Data representation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Data example (pie chart)'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Data example (table)'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
