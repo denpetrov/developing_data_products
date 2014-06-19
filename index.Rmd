@@ -1,6 +1,6 @@
 ---
 title       : Parlaments
-subtitle    : Parlament parties of different countries representaton
+subtitle    : Parlament parties seats of different countries
 author      : Denis PETROV
 job         : Coursera student
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -61,7 +61,7 @@ One can try the application
 
 ```{r 'set example parameters', echo = FALSE}
 country.example <- 'Austria'
-year.example <- '2002'
+year.example <- '1979'
 ```
 
 Pie chart for `r country.example` (`r year.example`)
