@@ -1,6 +1,6 @@
 ---
 title       : Parlaments
-subtitle    : Parlament parties of different countries representaton
+subtitle    : Parlament parties seats of different countries
 author      : Denis PETROV
 job         : Coursera student
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
@@ -57,7 +57,7 @@ One can try the application
 
 
 
-Pie chart for Austria (2002)
+Pie chart for Austria (1979)
 
 
 
@@ -166,7 +166,7 @@ callbacks.shift()();
 
 ## Data example (table)
 
-Corresponding table for Austria (2002)
+Corresponding table for Austria (1979)
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Thu Jun 19 18:31:43 2014 -->
