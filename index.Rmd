@@ -61,7 +61,7 @@ One can try the application
 
 ```{r 'set example parameters', echo = FALSE}
 country.example <- 'Austria'
-year.example <- '1979'
+year.example <- '2002'
 ```
 
 Pie chart for `r country.example` (`r year.example`)

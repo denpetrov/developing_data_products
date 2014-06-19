@@ -57,7 +57,7 @@ One can try the application
 
 
 
-Pie chart for Austria (1979)
+Pie chart for Austria (2002)
 
 
 
@@ -166,7 +166,7 @@ callbacks.shift()();
 
 ## Data example (table)
 
-Corresponding table for Austria (1979)
+Corresponding table for Austria (2002)
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
 <!-- Thu Jun 19 18:31:43 2014 -->
