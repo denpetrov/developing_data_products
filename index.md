@@ -44,7 +44,7 @@ of times a party makes the coalition a winning one joining it
 ## Data representation
 
 By choosing a country and a year from the list you obtain:
-* Pie chart of the seats of each party
+* Pie chart of the seats of each party.
 * Table of detailed information including party name, number of seats and 
 indices.
 
@@ -59,17 +59,15 @@ One can try the application
 
 Pie chart for Austria (2002)
 
-
-
-<!-- PieChart generated in R 3.1.0 by googleVis 0.5.1 package -->
-<!-- Thu Jun 19 20:22:01 2014 -->
+<!-- PieChart generated in R 3.1.0 by googleVis 0.5.2 package -->
+<!-- Sat Jun 21 21:57:19 2014 -->
 
 
 <!-- jsHeader -->
 <script type="text/javascript">
  
 // jsData 
-function gvisDataPieChartID38f70f46bec () {
+function gvisDataPieChartID81a540eaaeb () {
 var data = new google.visualization.DataTable();
 var datajson =
 [
@@ -97,14 +95,14 @@ return(data);
 }
  
 // jsDrawChart
-function drawChartPieChartID38f70f46bec() {
-var data = gvisDataPieChartID38f70f46bec();
+function drawChartPieChartID81a540eaaeb() {
+var data = gvisDataPieChartID81a540eaaeb();
 var options = {};
 options["allowHtml"] = true;
 options["height"] = "500";
 
     var chart = new google.visualization.PieChart(
-    document.getElementById('PieChartID38f70f46bec')
+    document.getElementById('PieChartID81a540eaaeb')
     );
     chart.draw(data,options);
     
@@ -128,9 +126,9 @@ if (newPackage)
   pkgs.push(chartid);
   
 // Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartPieChartID38f70f46bec);
+callbacks.push(drawChartPieChartID81a540eaaeb);
 })();
-function displayChartPieChartID38f70f46bec() {
+function displayChartPieChartID81a540eaaeb() {
   var pkgs = window.__gvisPackages = window.__gvisPackages || [];
   var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
   window.clearTimeout(window.__gvisLoad);
@@ -154,11 +152,11 @@ callbacks.shift()();
 </script>
  
 <!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartPieChartID38f70f46bec"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartPieChartID81a540eaaeb"></script>
  
 <!-- divChart -->
   
-<div id="PieChartID38f70f46bec"
+<div id="PieChartID81a540eaaeb"
   style="width: 600px; height: 500px;">
 </div>
 
@@ -169,7 +167,7 @@ callbacks.shift()();
 Corresponding table for Austria (2002)
 
 <!-- html table generated in R 3.1.0 by xtable 1.7-3 package -->
-<!-- Thu Jun 19 18:31:43 2014 -->
+<!-- Sat Jun 21 21:57:19 2014 -->
 <TABLE border=1>
 <TR> <TH> Party </TH> <TH> Seats </TH> <TH> perc of seats </TH> <TH> Banzhaf Power Index </TH> <TH> Shapley Shubik Power Index </TH>  </TR>
   <TR> <TD> Green Alternatie/Green in Parliament </TD> <TD align="right">  17 </TD> <TD align="right"> 0.09 </TD> <TD align="right"> 0.17 </TD> <TD align="right"> 0.17 </TD> </TR>

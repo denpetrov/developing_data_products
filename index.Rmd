@@ -20,7 +20,7 @@ strong {
 ```{r 'libs', echo = FALSE}
 library (xtable)
 suppressPackageStartupMessages (library (googleVis))  # gvisPieChart ()
-op <- options(gvis.plot.tag='chart')
+op <- options (gvis.plot.tag = 'chart')
 ```
 
 
@@ -48,7 +48,7 @@ of times a party makes the coalition a winning one joining it
 ## Data representation
 
 By choosing a country and a year from the list you obtain:
-* Pie chart of the seats of each party
+* Pie chart of the seats of each party.
 * Table of detailed information including party name, number of seats and 
 indices.
 
@@ -66,7 +66,7 @@ year.example <- '2002'
 
 Pie chart for `r country.example` (`r year.example`)
 
-```{r 'plot pie chart', echo = FALSE, results = 'asis'}
+```{r 'pie chart example', echo = FALSE, results = 'asis'}
 
 ds.countries <- read.csv (file = './data/countries.csv', sep = ',')
 flds.order <- c ('country', 'year', 'Party', 'Seats', 'perc.of.seats', 
@@ -80,9 +80,7 @@ names (ds.countries) <- gsub ('\\.', ' ', names (ds.countries))
 df.plot <- ds.countries [ds.countries$country == country.example & 
                                     ds.countries$year == year.example, 
                                     c('Party', 'Seats')]
-```
 
-```{r echo = FALSE, results = 'asis'}
 pie <- gvisPieChart (df.plot, options = list (height='500'))
 
 plot (pie)
@@ -94,7 +92,7 @@ plot (pie)
 
 Corresponding table for `r country.example` (`r year.example`)
 
-```{r 'display', echo = FALSE, results = 'asis'}
+```{r 'table example', echo = FALSE, results = 'asis'}
 
 flds.print <- c ('Party', 'Seats', 'perc of seats', 
                  'Banzhaf Power Index', 'Shapley Shubik Power Index')
