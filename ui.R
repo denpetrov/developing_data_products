@@ -1,16 +1,15 @@
 # Author: Denis Petrov
 # petrovdenis [at] gmail [dot] com
-# Date: 
+# Date: 2014-06-21
 
 shinyUI (pageWithSidebar (
   
   # Application title
   headerPanel ('Parlament'),
   
-  # Sidebar with controls to provide a caption, select a dataset, and 
-  # specify the number of observations to view. Note that changes made
-  # to the caption in the textInput control are updated in the output
-  # area immediately as you type
+  # Note that changes made to the caption in the textInput control 
+  # are updated in the year input area immediately as you select.
+  
   sidebarPanel (width = 3, 
     selectInput ('country', 'Choose a country:', 
                  choices = GetCountriesList (), selected = 1),
@@ -28,8 +27,7 @@ shinyUI (pageWithSidebar (
        'table, which includes the different indices.')
   ),
   
-  # Show the caption, a summary of the dataset and an HTML table with
-  # the requested number of observations
+  # Show the caption, pie chart and the corresponding table.
   mainPanel (
     h3 (textOutput ('caption')),
     h4 ('Observations'),

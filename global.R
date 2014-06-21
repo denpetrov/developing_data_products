@@ -1,6 +1,6 @@
 # Author: Denis Petrov
 # petrovdenis [at] gmail [dot] com
-# Date: 
+# Date: 2014-06-21
 
 # global variables
 

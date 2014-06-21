@@ -1,6 +1,6 @@
 # Author: Denis Petrov
 # petrovdenis [at] gmail [dot] com
-# Date: 
+# Date: 2014-06-21
 
 library (shiny)
 library (googleVis)  # gvisPieChart ()
@@ -9,18 +9,24 @@ library (googleVis)  # gvisPieChart ()
 shinyServer ( function (input, output, session) 
 {
   # Get the list of years of the chosen country
-  outVar = reactive (
+  GetYears = reactive (
     {
-      my.country <- input$country
-      years.u <- unique (ds.countries$year[ds.countries$country == my.country])
+      # Reactive:
+      #   input$country: chosen country.
+      # 
+      # Returns:
+      #   list of years for the selected country.
+      sel.country <- input$country
+      years.u <- unique (ds.countries$year[ds.countries$country == sel.country])
       ret.v <- sort (years.u)
       return (ret.v)
     }
   )
   
+  # Update the list of years
   observe (
     {
-      choices.r <- outVar()
+      choices.r <- GetYears ()
       updateSelectInput (session, "year", choices = choices.r, 
                          selected = choices.r [1])
     }
@@ -30,14 +36,20 @@ shinyServer ( function (input, output, session)
   
   GetText <- reactive (
     {
-      my.country <- input$country
-      my.year <- input$year
+      # Reactive:
+      #   input$country: chosen country.
+      #   input$year: chosen year.
+      # 
+      # Returns:
+      #   text to represent as a header.
+      sel.country <- input$country
+      sel.year <- input$year
       
-      if (my.year == '')
+      if (sel.year == '')
       {
-        my.year <- ds.countries$year [ds.countries$country == my.country] [1]
+        sel.year <- ds.countries$year [ds.countries$country == sel.country] [1]
       }
-      text.display <- paste (input$country, ' (', my.year, ')', sep = '')
+      text.display <- paste (input$country, ' (', sel.year, ')', sep = '')
       return (text.display)
     }
   )
@@ -53,56 +65,46 @@ shinyServer ( function (input, output, session)
   )
   
   
-  # Return the requested dataset
-  datasetInput <- reactive (
-  {
-    my.country <- input$country
-    my.year <- input$year
-    
-    df.ret <- NULL
-    
-    if (my.year == '')
+  # Return the requested data
+  GetData <- reactive (
     {
-      my.year <- ds.countries$year [ds.countries$country == my.country] [1]
+      # Reactive:
+      #   input$country: chosen country.
+      #   input$year: chosen year.
+      # 
+      # Returns:
+      #   data.frame of selected country and year of elections.
+      sel.country <- input$country
+      sel.year <- input$year
+      
+      df.ret <- NULL
+      
+      if (sel.year == '')
+      {
+        sel.year <- ds.countries$year [ds.countries$country == sel.country] [1]
+      }
+      
+      r.sel <- ds.countries$country == sel.country & 
+        ds.countries$year == sel.year
+      df.ret <- ds.countries [r.sel, flds.view]
+      return (df.ret)
     }
-    
-    r.sel <- ds.countries$country == my.country & ds.countries$year == my.year
-    df.ret <- ds.countries[r.sel, flds.view]
-    return (df.ret)
-  }
   )
   
+  # update the table
   output$view <- renderTable (
     {
       input$goButton
-      isolate (datasetInput ())
+      isolate (GetData ())
     }, 
     include.rownames = FALSE  # exclude row names from the output
   )
   
-  # Return the subset to plot the Pie chart
-  dataView <- reactive (
-    {
-      my.year <- as.integer (input$year)
-      my.country <- input$country
-      
-      df.plot <-NULL
-      
-      if (input$year == '')
-      {
-        my.year <- ds.countries$year [ds.countries$country == my.country] [1]
-      }
-      
-      df.plot <- ds.countries [ds.countries$country == my.country & 
-                                   ds.countries$year == my.year, flds.plot]
-      return (df.plot)
-    }
-  )
-  
+  # update pie chart
   output$viewchart <- renderGvis (
     {
       input$goButton
-      isolate (gvisPieChart (dataView ()))
+      isolate (gvisPieChart (GetData () [, flds.plot]))
     }
   )  
 }
