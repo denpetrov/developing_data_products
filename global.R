@@ -2,6 +2,11 @@
 # petrovdenis [at] gmail [dot] com
 # Date: 2014-06-21
 
+# The data was collected from http://globalelectionsdatabase.com/
+# and wikipedia.org
+# the indices were calculated by Maxim Litvak 
+# (https://github.com/maxlit/powerindex).
+
 # global variables
 
 # read and organize the data
