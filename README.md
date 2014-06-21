@@ -1,7 +1,5 @@
-developing_data_products
+Developing Data Products
 ========================
-
-Development Data Products (Coursera course)
 
 Project for coursera course "Developing Data Products", 
 provided by John Hopkins Bloomberg School of Public Health 
