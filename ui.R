@@ -11,7 +11,8 @@ shinyUI (pageWithSidebar (
   # are updated in the year input area immediately as you select.
   
   sidebarPanel (width = 3, 
-    selectInput ('country', 'Choose a country:', 
+    selectInput (inputId = 'country', 
+                 label = 'Choose a country:', 
                  choices = GetCountriesList (), selected = 1),
     br (),
     selectInput ('year', 'Choose a year:', ''), 

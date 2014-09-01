@@ -3,7 +3,7 @@
 # Date: 2014-06-21
 
 library (shiny)
-library (googleVis)  # gvisPieChart ()
+suppressPackageStartupMessages (library (googleVis))  # gvisPieChart ()
 
 # Define server logic required to summarize and view the selected dataset
 shinyServer ( function (input, output, session) 

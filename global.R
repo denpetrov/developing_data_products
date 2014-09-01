@@ -21,7 +21,7 @@ names (ds.countries) <- gsub ('\\.', ' ', names (ds.countries))
 
 GetCountriesList <- function ()
 {
-  return (unique (ds.countries$country))
+  return (as.character (unique (ds.countries$country)))
 }
 
 flds.view <- c ('Party', 'Seats', 'perc of seats', 
