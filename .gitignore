@@ -1,4 +1,4 @@
 .Rhistory
 .cache/
 .DS_Store
-shinyapps/
+shinyapps/**
